@@ -1,7 +1,7 @@
 "use client";
 
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { uploadBytesResumable as _typeCheck } from "firebase/storage";
+
 import { getStorageClient } from "@/lib/firebase/client";
 import { STORAGE_LIMITS } from "@/lib/constants";
 
