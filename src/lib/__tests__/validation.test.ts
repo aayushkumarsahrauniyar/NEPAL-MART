@@ -122,10 +122,10 @@ describe("normalizePhone", () => {
 
 describe("validatePassword", () => {
   it("accepts an 8 character password with a letter and a number", () => {
-     mixed-case password with assert.equal(validatePassword("abcd1234"), null);
+    expect(validatePassword("abcd1234")).toBeNull();
   });
 
-  it("accepts a strongsymbols", () => {
+  it("accepts a strong password with symbols", () => {
     expect(validatePassword("Str0ng!Pass#")).toBeNull();
   });
 
