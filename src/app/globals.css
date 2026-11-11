@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 250 250 251;
+    --surface: 255 255 255;
+    --surface-2: 246 247 249;
+    --text: 34 38 47;
+    --muted: 100 117 150;
+    --border: 213 218 227;
+  }
+
+  .dark {
+    --bg: 17 19 24;
+    --surface: 25 28 34;
+    --surface-2: 32 36 43;
+    --text: 236 238 242;
+    --muted: 150 160 180;
+    --border: 52 58 70;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--text));
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: rgb(208 61 79 / 0.2);
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(208 61 79);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .surface {
+    background-color: rgb(var(--surface));
+    border-color: rgb(var(--border));
+  }
+
+  .surface-2 {
+    background-color: rgb(var(--surface-2));
+  }
+
+  .text-muted {
+    color: rgb(var(--muted));
+  }
+
+  .border-app {
+    border-color: rgb(var(--border));
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .btn-secondary {
+    @apply btn surface border text-[rgb(var(--text))] hover:surface-2;
+  }
+
+  .btn-ghost {
+    @apply btn text-[rgb(var(--text))] hover:surface-2;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-app surface px-3.5 py-2.5 text-sm text-[rgb(var(--text))] placeholder:text-[rgb(var(--muted))] focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-[rgb(var(--text))];
+  }
+
+  .card {
+    @apply surface rounded-2xl border shadow-card;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg surface-2;
+  }
+
+  .field-error {
+    @apply mt-1 text-xs font-medium text-red-600;
+  }
+
+  .table-wrap {
+    @apply surface w-full overflow-x-auto rounded-2xl border shadow-card;
+  }
+
+  .table-base {
+    @apply w-full min-w-[640px] text-left text-sm;
+  }
+
+  .table-base thead th {
+    @apply surface-2 border-b border-app px-4 py-3 font-semibold text-muted;
+  }
+
+  .table-base tbody td {
+    @apply border-b border-app px-4 py-3 align-middle;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

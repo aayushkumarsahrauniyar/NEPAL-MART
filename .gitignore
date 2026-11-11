@@ -1,2 +1,11 @@
 node_modules
-node_modules
+.next
+out
+build
+coverage
+*.tsbuildinfo
+.env*
+!.env.example
+.firebase
+firebase-debug.log
+.DS_Store
