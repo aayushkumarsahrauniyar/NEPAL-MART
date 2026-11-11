@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "src/app/login/page.tsx",
+    "src/components/auth/login-form.tsx",
+    "src/lib/auth/auth-context.tsx",
+    "src/components/ui/toast.tsx",
+    "src/components/ui/primitives.tsx",
+    "src/lib/firebase/errors.ts",
+    "src/lib/firebase/client.ts",
+    "src/lib/services/users.ts",
+    "src/lib/validation.ts",
+    "src/lib/constants.ts",
+    "src/lib/types.ts"
+  ]
+}
